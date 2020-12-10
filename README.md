@@ -1,11 +1,13 @@
 # musicbox
 
-Some scripts to create a RPI musicbox with a [HifiBerry DAC](https://www.hifiberry.com/) on [PI Zero](https://www.raspberrypi.org/products/raspberry-pi-zero/) with Raspbian Stretch
+Some scripts to create a RPI musicbox with a [HifiBerry DAC](https://www.hifiberry.com/) on Raspberry PI (especially [PI Zero](https://www.raspberrypi.org/products/raspberry-pi-zero/)) with Raspbian
+
+- 26.04.2020 - now musicbox is compatible with Raspian Buster and RPI 4b
 
 ## Included software
 
 - Spotify Connect Server: [spotifyd](https://github.com/Spotifyd/spotifyd)
-- Plex Audio Player: [plexamp](https://plexamp.com/)
+- Plex Audio Player: [Plexamp for RPI v2.0 beta 2](https://forums.plex.tv/t/plexamp-for-raspberry-pi-release-notes/368282) - [Plexamp](https://plexamp.com/)
 - Music Player Daemon (MPD) with TuneIn and Spotify Integration: [mopidy](https://www.mopidy.com/)
 - Bluetooth Audio: [bluealsa](https://github.com/Arkq/bluez-alsa)
 - Zeroconf: [avahi-daemon](https://www.avahi.org/)
@@ -19,7 +21,7 @@ THX to
 
 ## Setup
 
-- Install [Raspbian Stretch Lite](https://www.raspberrypi.org/downloads/raspbian/) on a SD card
+- Install [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/) on a SD card
 - Insert SD card into your PI (Zero), connect HDMI and a keyboard
 - Power up PI (Zero)
 - Login with `pi` / `raspberry`
@@ -42,14 +44,14 @@ THX to
 - SSH to your PI (from Windows - Putty, or from Linux - ssh). Example below shows a Linux SSH connection. Insert your IP instead of `10.10.10.10`
   - `ssh pi@10.10.10.10`
   - Password: Password set before or `raspberry`
-- Install GIT
-  - `sudo apt update && sudo apt upgrade -y; sudo apt install -y git`
+- Latest Patches / Install GIT / Reboot
+  - `sudo apt update && sudo apt upgrade -y; sudo apt install -y git; sudo reboot`
+- SSH to PI again
 - Clone this repository
-  - `mkdir ~/sw; cd ~/sw; git clone https://github.com/snorre-k/musicbox.git`
+  - `mkdir ~/sw; cd ~/sw; git clone https://github.com/snorre-k/musicbox.git; cd`
 - Start the installation
   - `~/sw/musicbox/scripts/start_install.sh`
-- Reboot to get DAC overlay started
-  - `sudo reboot`
+  - PI gets rebootet, after installation has finished
   - You should hear a starting sound after the boot has finished
 
 ## What can I do after installation?
